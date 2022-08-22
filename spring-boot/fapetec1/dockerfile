@@ -1,0 +1,7 @@
+FROM lucian:maven
+
+COPY . /usr/src/my-maven-app
+WORKDIR /usr/src/my-maven-app
+
+RUN mvn clean install
+RUN mvn spring-boot:run
