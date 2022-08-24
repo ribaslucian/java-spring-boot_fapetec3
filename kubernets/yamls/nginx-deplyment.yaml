@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: lrr-nginx
+  name: lrr-nginx
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: lrr-nginx
+  template:
+    metadata:
+      labels:
+        app: lrr-nginx
+    spec:
+      containers:
+      - image: nginx
+        name: lrr-nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: lrr-nginx
+  name: lrr-nginx
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    app: lrr-nginx
+  type: LoadBalancer
