@@ -1,0 +1,18 @@
+# Tipos de serviços
+# ClusterIP - Expõe para a rede interna do cluster.
+# NodePort - Expõe em cada node.
+# ExternalName -  Expõe para um DNS.
+# LoadBalancer - Com auxílio do NodePort, e xpõe externamente com balanço de carga em nuvem.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+
+spec:
+  selector:
+    app: myApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 

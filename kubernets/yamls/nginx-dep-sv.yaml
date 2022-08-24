@@ -17,6 +17,7 @@ spec:
       containers:
       - image: nginx
         name: lrr-nginx
+
 ---
 apiVersion: v1
 kind: Service
