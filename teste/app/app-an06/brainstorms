@@ -1,0 +1,58 @@
+git clone ssh://ribas.lucian@source.developers.google.com:2022/p/
+
+
+git clone ssh://[EMAIL]@source.developers.google.com:2022/p/[PROJECT_ID]/r/[REPO_NAME]
+git clone ssh://ribas.lucian@gmail.com@source.developers.google.com:2022/p/AVALIACAO-AN06/r/app-an06
+
+git clone https://source.developers.google.com/p/PROJECT_ID/r/REPOSITORY_NAME
+git clone https://source.developers.google.com/p/avaliacao-an06-359818/r/app-an06
+
+repo app-an06
+project_id avaliacao-an06-359818
+project_name AVALIACAO-AN06
+
+
+
+
+container ct-av-06
+
+
+
+
+
+
+
+
+docker pull busybox
+docker tag busybox gcr.io/my-project/busybox
+docker push gcr.io/my-project/busybox
+
+
+docker build -f 'av-06.dockerfile' -t 'ribaslucian/av-06:1' .
+docker run -d -it --name ct-av06 -p 80:8080 ribaslucian/av-06:1 sh
+docker run -d -it --name ct-av-06 -p 80:8080 ribaslucian/av-06 sh
+
+
+
+
+gcloud container images list
+
+
+
+net localgroup docker-users DESKTOP-HVQV5MI\Lucian /add
+
+
+
+gcloud auth login
+docker login registry-1.docker.io
+docker login gcr.io
+
+
+
+
+
+
+
+
+gcloud iam service-accounts keys create iamkey \
+    --iam-account=SA_NAME@PROJECT_ID.iam.gserviceaccount.com

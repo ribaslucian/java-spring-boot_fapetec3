@@ -1,0 +1,16 @@
+FROM registry.hub.docker.com/ribaslucian/av-06:1
+
+COPY . /usr/src/
+WORKDIR /usr/src/
+RUN mvn clean install
+RUN nohup mvn spring-boot:run &
+
+
+
+# FROM imagens.livpay.com.br/ruby:2.7.3
+# COPY . /usr/src/myapp
+
+# WORKDIR /usr/src/myapp
+# RUN bundle update
+
+# CMD /usr/src/myapp/bin/rails s -b 0.0.0.0 -e production
